@@ -23,4 +23,8 @@ services:
     container_name: dpd_docker
     network_mode: "host"
     restart: always
+
+    build:
+      context: .
+      
     working_dir: /dpd-zero
