@@ -1,0 +1,51 @@
+version: "3"
+
+secrets:
+  host_ssh_key:
+    file: ~/.ssh/id_rsa
+
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: cement
+      MYSQL_DATABASE: cement
+      MYSQL_USER: cement
+      MYSQL_PASSWORD: cement
+    volumes:
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    network_mode: "host"
+
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    network_mode: "host"
+    volumes: 
+      - /data
+
+  qcdocker:
+    container_name: cement_docker
+    network_mode: "host"
+    privileged: true
+    restart: always
+
+    volumes:
+        - /etc/timezone:/etc/timezone
+        - /etc/localtime:/etc/localtime
+        - ./missed_tag:/cement-backend/missed_tag
+        - type: bind
+          source: /dev/bus/usb
+          target: /dev/bus/usb
+          bind:
+            propagation: shared
+
+    secrets:
+      - host_ssh_key
+          
+    build:
+      context: .
+      args:
+        - ssh_prv_key
+        - ssh_pub_key
+
+    working_dir: /cement-offline-backend
