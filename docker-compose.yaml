@@ -1,37 +1,32 @@
 version: "3"
 
 services:
+  qcdocker:
+    container_name: dpd_docker
+    ports:
+      - "9000:9000"
+    networks:
+      - dpd_network
+    restart: always
+    depends_on: 
+      - db
+    build:
+      context: .
+
+    working_dir: /dpd-zero
+
   db:
     image: mariadb
     restart: always
     networks:
       - dpd_network
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: dpd
       MYSQL_USER: root
       MYSQL_PASSWORD: password
     volumes:
       - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
-
-  cache:
-    image: redis:6.2-alpine
-    restart: always
-    networks:
-      - dpd_network
-    volumes: 
-      - /data
-
-  qcdocker:
-    container_name: dpd_docker
-    networks:
-      - dpd_network
-    restart: always
-
-    build:
-      context: .
-
-    working_dir: /dpd-zero
 
 networks:
   dpd_network:
