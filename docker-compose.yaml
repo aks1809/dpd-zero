@@ -21,9 +21,6 @@ services:
       - dpd_network
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: dpd
-      MYSQL_USER: dpd
-      MYSQL_PASSWORD: password
     volumes:
       - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
 
