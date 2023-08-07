@@ -1,0 +1,886 @@
+{
+	"info": {
+		"_postman_id": "06f9c0d9-efeb-4406-a2bd-c7afc329fab7",
+		"name": "DPD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13191502"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"example_user\",\n  \"email\": \"user@example.com\",\n  \"password\": \"\",\n  \"full_name\": \"John Doe\",\n  \"gender\": \"male\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"example_user\",\n  \"email\": \"user@example.com\",\n  \"password\": \"\",\n  \"full_name\": \"John Doe\",\n  \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6e-IijbyNbvWIe66M7FQsPlYLocffU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 21:18:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"user_id\": 7,\n        \"username\": \"example_user\",\n        \"email\": \"user@example.com\",\n        \"gender\": \"male\"\n    }\n}"
+				},
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"example_user\",\n  \"email\": \"user@example.com\",\n  \"password\": \"password\",\n  \"full_name\": \"John Doe\",\n  \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "131"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"83-MLL2kFMyEXu75ivpV6vM8mv3Gho\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 21:18:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"code\": \"USERNAME_EXISTS\",\n    \"message\": \"The provided username is already taken. Please choose a different username.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"example_user\",\n  \"password\": \"password\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"example_user\",\n  \"password\": \"password\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "679"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a7-ZoVcHT1z+aZy5ATydWiTjEvSAkI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 21:54:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Access token generated successfully.\",\n    \"data\": {\n        \"access_token\": \"Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImV4YW1wbGVfdXNlciIsImZ1bGxfbmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjkxMzU4ODkwLCJleHAiOjE2OTE0NDUyOTAsImF1ZCI6IjciLCJpc3MiOiJEVEQifQ.cecHHWSkOu4IhalhErwteyofSf7bLOsw1ZvyFJK9WyrJzPOAsjSE-bvep0gBMBrh2yIlMfFixVGKpIwM3AsM9Jy8A6kc-S2-fZnage3DJSiMNTMATU6yayHjgSkZPoQcQwKVzT1ymU4eHyydk3BCwKecGHunLLiw8O_jAIyVMOKuUoGu8_gFw4Kb2-vp-7Ts3tz_a9-vFRSi-URu6N6XwTpl2UXaOgGNJFNY6_90FqjLy4mIlCUJ7wkN33eI4ePx01TiTZObZW7ShsPEgaEVxlT1CmLpBGM9cc-QlkC_CXC5h2pS08uQukTlJvexgsUS-xuym6NqPiCc4F64DXd5dg\",\n        \"expires_in\": \"1d\"\n    }\n}"
+				},
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"example_user\",\n  \"password\": \"wrong_password\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"80-2VpLkZknRTZN9gSn9x0kb/3QZTw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Aug 2023 21:55:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"code\": \"INVALID_CREDENTIALS\",\n    \"message\": \"Invalid credentials. The provided username or password is incorrect.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Insert data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImV4YW1wbGVfdXNlciIsImZ1bGxfbmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjkxMzYwNDk0LCJleHAiOjE2OTE0NDY4OTQsImF1ZCI6IjciLCJpc3MiOiJEUEQifQ.JRw3sLWtJSuMqEMSSaKKZQAPj7nkXCkDYlPEBXF2jQIi_0UWxDBGpCAYk7z_Hy0VL29PAls5BwQdqR-kMe4ugOaXE0gta4gUsr9KJrSR7o3TO2l5R6czGm4RYfNPOO7pwcQhGVsGXp0JJSUxv5l4QMSAmYbgBrf2MPnM2aGwfipR4t2PJaUbSAPX8dvLIUL_8v31glsD9uxCZ4f5e2S91HF2x0BImRFbg51xOoMjcJpUI49p6lxuJ-m84fznd4mPW61RpEzVxttp5oI06tnd-jeOBGjH86WbAOzfR7SajuM2nnYOwd2XMTHihBNDeMFe8bJ72TA29mOqnVaddOxIfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"key\": \"unique_key\",\n  \"value\": \"data_value\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"data"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"key\": \"unique_key\",\n  \"value\": \"data_value\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44-7E/2FOnDPbMh0lOT1BD742+EUxk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 18:23:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Data stored successfully.\",\n    \"data\": {}\n}"
+				},
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"key\": \"unique_key\",\n  \"value\": \"data_value\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"data"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"92-3dAPRSNn1IeQDi9Kl/d8p3BD8hU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 18:23:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"code\": \"KEY_EXISTS\",\n    \"message\": \"The provided key already exists in the database. To update an existing key, use the update API.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImV4YW1wbGVfdXNlciIsImZ1bGxfbmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjkxMzYwNDk0LCJleHAiOjE2OTE0NDY4OTQsImF1ZCI6IjciLCJpc3MiOiJEUEQifQ.JRw3sLWtJSuMqEMSSaKKZQAPj7nkXCkDYlPEBXF2jQIi_0UWxDBGpCAYk7z_Hy0VL29PAls5BwQdqR-kMe4ugOaXE0gta4gUsr9KJrSR7o3TO2l5R6czGm4RYfNPOO7pwcQhGVsGXp0JJSUxv5l4QMSAmYbgBrf2MPnM2aGwfipR4t2PJaUbSAPX8dvLIUL_8v31glsD9uxCZ4f5e2S91HF2x0BImRFbg51xOoMjcJpUI49p6lxuJ-m84fznd4mPW61RpEzVxttp5oI06tnd-jeOBGjH86WbAOzfR7SajuM2nnYOwd2XMTHihBNDeMFe8bJ72TA29mOqnVaddOxIfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/data/unique_key",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"data",
+						"unique_key"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/data/1323",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"data",
+								"1323"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"66-UBk0XvSww+kCwwhqVA2f3YYnVFo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 18:31:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"code\": \"KEY_NOT_FOUND\",\n    \"message\": \"The provided key does not exist in the database.\"\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/data/unique_key",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"data",
+								"unique_key"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5d-mr9EpT58Fk4LmFTvsm/XNoaTyao\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 18:32:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Data found.\",\n    \"data\": {\n        \"key\": \"unique_key\",\n        \"value\": \"data_value\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImV4YW1wbGVfdXNlciIsImZ1bGxfbmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjkxMzYwNDk0LCJleHAiOjE2OTE0NDY4OTQsImF1ZCI6IjciLCJpc3MiOiJEUEQifQ.JRw3sLWtJSuMqEMSSaKKZQAPj7nkXCkDYlPEBXF2jQIi_0UWxDBGpCAYk7z_Hy0VL29PAls5BwQdqR-kMe4ugOaXE0gta4gUsr9KJrSR7o3TO2l5R6czGm4RYfNPOO7pwcQhGVsGXp0JJSUxv5l4QMSAmYbgBrf2MPnM2aGwfipR4t2PJaUbSAPX8dvLIUL_8v31glsD9uxCZ4f5e2S91HF2x0BImRFbg51xOoMjcJpUI49p6lxuJ-m84fznd4mPW61RpEzVxttp5oI06tnd-jeOBGjH86WbAOzfR7SajuM2nnYOwd2XMTHihBNDeMFe8bJ72TA29mOqnVaddOxIfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"value\": \"new_data_value2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/data/unique_key1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"data",
+						"unique_key1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\": \"new_data_value2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/data/unique_key",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"data",
+								"unique_key"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-3j3xYOw7OlDZ762aNSjOnZM9W7g\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 18:59:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Data updated successfully.\",\n    \"data\": {}\n}"
+				},
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"value\": \"new_data_value2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/data/unique_key1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"data",
+								"unique_key1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"66-UBk0XvSww+kCwwhqVA2f3YYnVFo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 19:00:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"code\": \"KEY_NOT_FOUND\",\n    \"message\": \"The provided key does not exist in the database.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJ1c2VybmFtZSI6ImV4YW1wbGVfdXNlciIsImZ1bGxfbmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjkxMzYwNDk0LCJleHAiOjE2OTE0NDY4OTQsImF1ZCI6IjciLCJpc3MiOiJEUEQifQ.JRw3sLWtJSuMqEMSSaKKZQAPj7nkXCkDYlPEBXF2jQIi_0UWxDBGpCAYk7z_Hy0VL29PAls5BwQdqR-kMe4ugOaXE0gta4gUsr9KJrSR7o3TO2l5R6czGm4RYfNPOO7pwcQhGVsGXp0JJSUxv5l4QMSAmYbgBrf2MPnM2aGwfipR4t2PJaUbSAPX8dvLIUL_8v31glsD9uxCZ4f5e2S91HF2x0BImRFbg51xOoMjcJpUI49p6lxuJ-m84fznd4mPW61RpEzVxttp5oI06tnd-jeOBGjH86WbAOzfR7SajuM2nnYOwd2XMTHihBNDeMFe8bJ72TA29mOqnVaddOxIfw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/data/unique_key",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"data",
+						"unique_key"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "failure",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/data/unique_key",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"data",
+								"unique_key"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"66-UBk0XvSww+kCwwhqVA2f3YYnVFo\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Aug 2023 19:02:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"code\": \"KEY_NOT_FOUND\",\n    \"message\": \"The provided key does not exist in the database.\"\n}"
+				}
+			]
+		}
+	]
+}
