@@ -7,6 +7,11 @@ const sequelize = new Sequelize(
     dialect: 'mysql',
     dialectOptions: {},
     timezone: '+05:30',
+    retry: {
+      max: 5,
+      timeout: 1000,
+      match: [/ECONNREFUSED/, /ETIMEDOUT/, /EHOSTUNREACH/, /EAI_AGAIN/],
+    },
   }
 );
 
